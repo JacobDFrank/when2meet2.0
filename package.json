@@ -1,0 +1,19 @@
+{
+  "name": "when2meet2.0",
+  "version": "1.0.0",
+  "description": "redo of the site when2meet in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobDFrank/when2meet2.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobDFrank/when2meet2.0/issues"
+  },
+  "homepage": "https://github.com/JacobDFrank/when2meet2.0#readme"
+}
