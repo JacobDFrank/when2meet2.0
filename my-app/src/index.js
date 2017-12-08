@@ -4,8 +4,9 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
 import App from './containers/app'
+import Helmet from 'react-helmet';
 
-import './index.css'
+
 
 const target = document.querySelector('#root')
 
@@ -13,7 +14,8 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <App />
+        <Helmet title="You Are Doing Great" />
+            <App />
       </div>
     </ConnectedRouter>
   </Provider>,
