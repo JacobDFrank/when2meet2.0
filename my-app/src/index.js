@@ -6,6 +6,14 @@ import store, { history } from './store'
 import App from './containers/app'
 import Helmet from 'react-helmet';
 
+import './index.css'
+import {
+  injectGlobalStyle,
+  injectResetStyle,
+} from 'reactackle';
+
+injectGlobalStyle();
+injectResetStyle();
 
 
 const target = document.querySelector('#root')

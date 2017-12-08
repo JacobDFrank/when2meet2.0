@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom'
 import Home from '../home'
 import About from '../about'
-import plan from '../plan'
+import {PlanStart} from '../plan/Plan'
 
 
 
@@ -11,13 +11,13 @@ const App = () => (
     <header>
       <Link to="/">Home</Link>
       <Link to="/about-us">About</Link>
-      <Link to="/plan">plan</Link>
+      <Link to="/plan/">Plan</Link>
     </header>
 
     <main>
       <Route exact path="/" component={Home} />
       <Route exact path="/about-us" component={About} />
-      <Route exact path="/plan" component={plan} />
+      <Route exact path="/plan" component={PlanStart} />
     </main>
   </div>
 )
