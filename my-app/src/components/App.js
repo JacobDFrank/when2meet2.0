@@ -1,4 +1,5 @@
 import React from 'react';
+// import Order from './Order';
 import base from '../base';
 import DayPicker from './DayPicker';
 import Plan from './Plan';
@@ -16,9 +17,9 @@ class App extends React.Component {
 
   componentWillMount() {
     // this runs right before the <App> is rendered
-    this.ref = base.syncState(`${this.props.params.calId}`, {
+    this.ref = base.syncState(`${this.props.params.calId}/days`, {
       context: this,
-      state: 'days'
+      state: 'this.props.params.calId'
     });
 
     // check if there is any order in localStorage
@@ -42,7 +43,9 @@ class App extends React.Component {
   render() {
     return (<div className="catch-of-the-day">
       <div>
+        <h2>${this.props.params.calId}</h2>
         <DayPicker/>
+
         <p>No earlier than:</p>
         <Plan/>
 
