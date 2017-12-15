@@ -1,12 +1,16 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter, Match, Miss } from 'react-router';
+import Helmet from 'react-helmet';
+import './css/style.css';
+import App from './components/App';
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store'
-import App from './containers/app'
-import Helmet from 'react-helmet';
+import MeetingPicker from './components/MeetingPicker';
+import NotFound from './components/NotFound';
 
-import './index.css'
+
 import {
   injectGlobalStyle,
   injectResetStyle,
@@ -16,16 +20,21 @@ injectGlobalStyle();
 injectResetStyle();
 
 
-const target = document.querySelector('#root')
-
-render(
-  <Provider store={store}>
+const Root = () => {
+  return (
+    <Provider store={store}>
     <ConnectedRouter history={history}>
+    <BrowserRouter>
       <div>
-        <Helmet title="You Are Doing Great" />
-            <App />
+        <Helmet title="When2Meet2.0" />
+        <Match exactly pattern="/" component={MeetingPicker} />
+        <Match pattern="/store/:calId" component={App} />
+        <Miss component={NotFound} />
       </div>
-    </ConnectedRouter>
-  </Provider>,
-  target
-)
+    </BrowserRouter>
+  </ConnectedRouter>
+</Provider>
+  )
+}
+
+render(<Root/>, document.querySelector('#main'));
